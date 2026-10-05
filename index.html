@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FUTXO — Catalog Drop 01</title>
+<meta name="description" content="Drop 01. Fits, fabrics, colors and prices. Everything in one place.">
+<meta property="og:title" content="FUTXO — Catalog Drop 01">
+<meta property="og:description" content="The full lineup.">
+<meta property="og:image" content="og.jpg">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/futxo-new-design-system-019e2924-b909-7ba1-a1c1-df77da433c3b/colors_and_type.css">
+  <script src="_ds/futxo-new-design-system-019e2924-b909-7ba1-a1c1-df77da433c3b/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: var(--bg); }
+    a { color: var(--fg); text-decoration: none; }
+    a:hover { color: var(--brand-green); }
+    .fx-scroll::-webkit-scrollbar { display: none; }
+    .fx-reorder { display: none !important; }
+    .fx-rv { opacity: 0; transform: translateY(20px); transition: opacity .4s ease, transform .4s ease; }
+    .fx-rv.fx-in { opacity: 1; transform: none; }
+    .fx-imgwrap image-slot { transition: transform .22s ease-in; }
+    .fx-hb:hover image-slot { transform: perspective(900px) rotateY(90deg); }
+    .fx-back { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; pointer-events: none; opacity: 0; transform: perspective(900px) rotateY(-90deg); transition: transform .22s ease-in, opacity 0s .22s; background: #fff; }
+    .fx-hb:hover .fx-back { opacity: 1; transform: none; transition: transform .22s ease-out .22s, opacity 0s .22s; }
+    .fx-idx { display: flex; align-items: center; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); cursor: pointer; transition: transform .2s ease-out; }
+    .fx-idx:hover { transform: translateX(10px); }
+    .fx-idx .fx-ar { margin-left: auto; opacity: 0; transform: translateX(-6px); transition: opacity .2s ease-out, transform .2s ease-out; }
+    .fx-idx:hover .fx-ar { opacity: 1; transform: none; }
+    @media (min-width: 768px) and (max-width: 1180px) {
+      .fx-hero-sec { padding: 24px 32px !important; }
+      .fx-hero-box { zoom: 0.8; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) { .fx-hero-box { zoom: 0.68; } }
+    @media (min-width: 768px) and (max-width: 899px) { .fx-hero-box { zoom: 0.58; } }
+    @media (max-width: 767px) {
+      .fx-hero-box { grid-template-rows: none !important; min-height: 0 !important; }
+      .fx-hero-left { padding: 0 !important; }
+      .fx-hero-left h1 { font-size: 56px !important; }
+      .fx-hero-right { left: 12px !important; bottom: 12px !important; }
+      .fx-nav { grid-column: 1 / -1 !important; }
+            .fx-hero-title { margin-top: 8px !important; padding-right: 0 !important; }
+      .fx-hero-img { width: 100% !important; height: auto !important; aspect-ratio: 4 / 5; }
+      .fx-hero-right { padding-top: 0 !important; gap: 24px; }
+      .fx-hero-text { margin: 0 !important; width: auto !important; }
+      .fx-hero-cut { display: none !important; }
+      .fx-hero-cards { margin-left: 0 !important; width: 100%; }
+      .fx-hero-card { flex: 1 1 0; min-width: 0 !important; }
+      .fx-hero-social { align-self: flex-start !important; }
+    }
+    @media (max-width: 767px) {
+      .fx-hero-sec { padding: 12px !important; }
+      .fx-hero-box { grid-template-columns: minmax(0,1fr) !important; padding: 20px !important; gap: 24px !important; }
+      .fx-hero-left, .fx-hero-img { grid-column: 1 / -1 !important; }
+      .fx-hero-title { order: 1; }
+      .fx-hero-title h1 { font-size: 36px !important; }
+      .fx-hero-img { order: 2; }
+      .fx-hero-text { order: 3; }
+      .fx-hero-right { order: 4; }
+      .fx-hero-social { margin-top: 8px !important; }
+    }
+    @media (max-width: 767px) {
+      .futxo-title-block { grid-template-columns: 1fr !important; }
+      .futxo-featured-pair { grid-template-columns: 1fr !important; }
+      .fx-pad { padding-left: 20px !important; padding-right: 20px !important; }
+      .fx-pad-y { padding-top: 56px !important; padding-bottom: 56px !important; }
+      .fx-nav-links { gap: 14px !important; padding: 0 !important; }
+      .fx-nav { flex-wrap: wrap; row-gap: 12px; }
+      .fx-h-edit { font-size: 34px !important; }
+      .fx-seasons { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px !important; margin: 0 -20px; padding: 0 20px; scrollbar-width: none; }
+      .fx-season { flex: 0 0 78%; height: 380px; grid-column: auto !important; grid-row: auto !important; scroll-snap-align: start; }
+      .fx-filters { flex-wrap: nowrap !important; overflow-x: auto; scrollbar-width: none; margin: 0 -20px; padding: 0 20px; }
+      .fx-filters > * { flex: 0 0 auto; }
+      .fx-grid { column-count: 2 !important; column-gap: 14px !important; }
+      .fx-grid > * { margin-bottom: 32px !important; }
+      .fx-reorder { display: none !important; }
+      .fx-bag { display: flex !important; }
+      .fx-h2 { font-size: 34px !important; }
+      .fx-feat { height: 440px !important; }
+      .fx-feat-eyebrow { left: 20px !important; top: 24px !important; }
+      .fx-feat-title { left: 20px !important; right: 20px; bottom: 32px !important; }
+      .fx-feat-title > div:first-child { font-size: 52px !important; }
+      .fx-2col { grid-template-columns: minmax(0,1fr) !important; gap: 48px !important; }
+      .fx-size-wrap { grid-template-columns: minmax(0,1fr) !important; gap: 24px !important; }
+      .fx-size-illo { max-width: 150px; }
+      .fx-size-inner { min-width: 520px; }
+      .fx-closing { font-size: 26px !important; }
+      .fx-pager { gap: 12px !important; }
+    }
+  </style>
+</helmet>
+
+<div style="width:100%;max-width:1440px;margin:0 auto;background:var(--bg);overflow:hidden;">
+
+<sc-if value="{{ true }}" hint-placeholder-val="{{ true }}">
+
+  <!-- 0. MAIN HERO -->
+  <section class="fx-hero-sec" style="padding:32px 64px;background:var(--bg);">
+    <div class="fx-hero-box" style="position:relative;border-radius:4px;background:var(--surface);overflow:hidden;min-height:760px;box-sizing:border-box;padding:32px 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:48px;row-gap:12px;">
+
+      <div class="fx-nav" style="grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;z-index:6;">
+        <img src="_ds/futxo-new-design-system-019e2924-b909-7ba1-a1c1-df77da433c3b/assets/mark.png" alt="FUTXO" style="width:52px;height:52px;object-fit:contain;">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <div class="fx-nav-links" style="display:flex;gap:20px;padding:6px 10px;">
+            <a href="#capsule01-section" style="font-family:var(--font-sans);font-weight:700;font-size:12px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg);text-decoration:underline;">{{ t.navDrops }}</a>
+            <a href="https://futxo.com" target="_blank" rel="noopener" style="font-family:var(--font-sans);font-weight:700;font-size:12px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg);text-decoration:underline;">{{ t.navShop }}</a>
+            <a href="https://wa.me/13057726128?text=Hey%20FUTXO%2C%20I%20want%20more%20info%20on%20Capsule%2001" target="_blank" rel="noopener" style="font-family:var(--font-sans);font-weight:700;font-size:12px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg);text-decoration:underline;">{{ t.navContact }}</a>
+          </div>
+          <div style="display:flex;gap:2px;">
+            <x-import component-from-global-scope="FUTXODesignSystem_019e29.Button" variant="{{ langEsVariant }}" size="sm" on-click="{{ setLangEs }}" hint-size="auto,32px">ES</x-import>
+            <x-import component-from-global-scope="FUTXODesignSystem_019e29.Button" variant="{{ langEnVariant }}" size="sm" on-click="{{ setLangEn }}" hint-size="auto,32px">EN</x-import>
+          </div>
+        </div>
+      </div>
+
+      <div class="fx-hero-left" style="display:flex;flex-direction:column;justify-content:center;gap:28px;position:relative;z-index:5;padding:0 0 24px 8px;">
+        <div style="font-family:var(--font-mono);font-weight:700;font-size:14px;letter-spacing:var(--tracking-label);color:var(--brand-green);text-transform:uppercase;">{{ t.heroEyebrow }}</div>
+        <h1 style="font-family:var(--font-display);font-weight:800;font-size:96px;line-height:0.92;letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--fg);margin:0;text-wrap:balance;">{{ t.heroHeadline }}</h1>
+        <p style="font-family:var(--font-sans);font-size:18px;line-height:var(--lh-normal);color:var(--fg-2);margin:0;max-width:440px;">{{ t.heroSub }}</p>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;font-family:var(--font-mono);font-weight:600;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;color:var(--fg-3);padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:440px;">
+          <span>{{ heroStats.collections }}</span><span style="color:var(--brand-green);">·</span><span>{{ heroStats.pieces }}</span><span style="color:var(--brand-green);">·</span><span>{{ heroStats.from }}</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <a href="FUTXO-Catalogo-Drop01.pdf" download="FUTXO-Catalogo-Drop01.pdf" style="display:inline-flex;align-items:center;gap:14px;height:56px;padding:0 28px;box-sizing:border-box;white-space:nowrap;border-radius:999px;border:1px solid #ffffff;background:#ffffff;color:#0a0a0a;font-family:var(--font-mono);font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;" style-hover="background:#e8e8e8;color:#0a0a0a;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>{{ t.dlPdf }}</a>
+          <a href="https://futxo.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:28px;height:56px;padding:0 28px;box-sizing:border-box;white-space:nowrap;border-radius:999px;border:1px solid rgba(255,255,255,0.45);background:transparent;color:#ffffff;font-family:var(--font-mono);font-weight:700;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;" style-hover="background:rgba(255,255,255,0.08);color:#ffffff;">{{ t.shopDrop }}</a>
+        </div>
+        <div style="max-width:440px;border-top:1px solid var(--line);margin-top:4px;">
+          <sc-for list="{{ heroIndex }}" as="ix" hint-placeholder-count="5">
+            <div class="fx-idx" onClick="{{ ix.onClick }}">
+              <span style="font-family:var(--font-mono);font-weight:600;font-size:12px;letter-spacing:0.04em;color:var(--brand-green);">{{ ix.num }}</span>
+              <span style="font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--fg);">{{ ix.key }}</span>
+              <span style="font-family:var(--font-mono);font-weight:500;font-size:12px;letter-spacing:0.04em;color:var(--fg-3);text-transform:uppercase;">{{ ix.sub }}</span>
+              <svg class="fx-ar" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--fg)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div class="fx-hero-img" style="position:relative;z-index:2;aspect-ratio:2/3;width:100%;align-self:start;">
+        <div style="position:absolute;inset:0;border-radius:16px;overflow:hidden;background:#d9dbde;">
+          <image-slot id="hero-catalog-v2" shape="rect" fit="cover" src="img/hero-hoodie.png" placeholder="[ HERO — DROP 01 ]"></image-slot>
+        </div>
+        <div class="fx-hero-social" style="position:absolute;top:16px;right:16px;z-index:4;display:flex;gap:10px;">
+          <a href="https://www.instagram.com/futxoofficial" target="_blank" rel="noopener" aria-label="Instagram @futxoofficial" style="width:48px;height:48px;border-radius:999px;border:1px solid #3a3a3a;background:rgba(27,27,27,0.72);display:flex;align-items:center;justify-content:center;color:var(--fg);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--fg)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="var(--fg)"></circle></svg>
+        </a>
+        <a href="https://www.tiktok.com/@futxoofficial" target="_blank" rel="noopener" aria-label="TikTok @futxoofficial" style="width:48px;height:48px;border-radius:999px;border:1px solid #3a3a3a;background:rgba(27,27,27,0.72);display:flex;align-items:center;justify-content:center;color:var(--fg);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--fg)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v9.5a3.5 3.5 0 1 1-3-3.46"></path><path d="M14 4c0 2.5 2 4.5 4.5 4.5"></path></svg>
+        </a>
+        
+        </div>
+        
+
+    </div>
+  </section>
+
+  <!-- 2. EDITORIAL TITLE -->
+  <section class="futxo-title-block fx-pad" style="display:grid;grid-template-columns:60% 1fr;gap:48px;padding:88px 64px 64px 64px;align-items:start;">
+    <h2 class="fx-h-edit" style="font-family:var(--font-display);font-weight:800;font-size:56px;line-height:var(--lh-tight);letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--fg);margin:0;">{{ t.heroChamferLabel }}</h2>
+  </section>
+
+  <!-- 3. SEASONS MOSAIC -->
+  <section class="fx-pad" style="padding:0 64px 64px 64px;">
+    <div class="fx-seasons fx-scroll" style="display:grid;grid-template-columns:repeat(4, 1fr);grid-auto-rows:180px;gap:24px;">
+      <sc-for list="{{ seasons }}" as="item" hint-placeholder-count="5">
+        <div class="fx-season" style="position:relative;overflow:hidden;cursor:pointer;grid-column:{{ item.gridColumn }};grid-row:{{ item.gridRow }};background:var(--brand-grad);" onClick="{{ item.onClick }}">
+          <div style="position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;padding:16px;pointer-events:none;">
+            <div style="font-family:var(--font-display);font-weight:800;font-size:26px;line-height:1.05;letter-spacing:var(--tracking-display);text-transform:uppercase;color:#ffffff;text-align:center;">{{ item.sub }}</div>
+          </div>
+          <image-slot id="{{ item.slotId }}" shape="rect" fit="cover" src="{{ item.image }}" placeholder=" " style="position:relative;z-index:1;"></image-slot>
+          <div style="position:absolute;inset:0;z-index:2;background:linear-gradient(180deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.45) 100%);pointer-events:none;"></div>
+          
+          <div style="position:absolute;left:16px;bottom:14px;pointer-events:none;z-index:3;">
+            <div style="font-family:var(--font-mono);font-weight:700;font-size:16px;letter-spacing:0.03em;color:#ffffff;text-transform:uppercase;">{{ item.key }}</div>
+            <div style="font-family:var(--font-sans);font-weight:600;font-size:12px;color:#ffffff;text-transform:uppercase;margin-top:2px;">{{ item.sub }}</div>
+            <div style="font-family:var(--font-mono);font-weight:600;font-size:12px;letter-spacing:0.03em;color:#ffffff;text-transform:uppercase;margin-top:4px;">{{ item.meta }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <div class="fx-pad" style="height:1px;background:var(--line);margin:0 64px 0 64px;"></div>
+
+  <!-- 2. CAPSULE 01 + sticky nav, then grid -->
+  <div style="position:relative;">
+
+    <div id="capsule01-section" class="fx-pad" style="background:var(--bg-2);padding:80px 64px 40px 64px;">
+      <h2 class="fx-h2" style="font-family:var(--font-display);font-weight:800;font-size:48px;letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--fg);margin:0;">DROP 01</h2>
+    </div>
+
+    <div class="fx-pad" style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 64px;background:rgba(27,27,27,0.72);backdrop-filter:blur(14px) saturate(140%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+      <div class="fx-filters fx-scroll" style="display:flex;gap:8px;flex-wrap:wrap;">
+        <sc-for list="{{ navItems }}" as="nav" hint-placeholder-count="6">
+          <x-import component-from-global-scope="FUTXODesignSystem_019e29.Button" variant="{{ nav.variant }}" size="sm" on-click="{{ nav.onClick }}" hint-size="auto,32px">{{ nav.label }}</x-import>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- 3. GRID -->
+    <section class="fx-pad" style="background:#ffffff;padding:64px;">
+      <div class="fx-grid" style="column-count:3;column-gap:32px;">
+        <sc-for list="{{ grid1 }}" as="item" hint-placeholder-count="9">
+          <div data-pid="{{ item.id }}" style="display:flex;flex-direction:column;gap:10px;cursor:pointer;break-inside:avoid;margin-bottom:40px;" onClick="{{ item.onClick }}">
+            <div class="fx-imgwrap {{ item.flipClass }}" style="position:relative;aspect-ratio:{{ item.ratio }};background:#ffffff;overflow:hidden;">
+              <image-slot id="{{ item.slotId }}" shape="rect" fit="cover" src="{{ item.image }}" placeholder="{{ item.placeholder }}"></image-slot>
+              <sc-if value="{{ item.backImage }}" hint-placeholder-val="{{ false }}"><img class="fx-back" data-src="{{ item.backImage }}" alt=""></sc-if>
+              <sc-if value="{{ item.limited }}" hint-placeholder-val="{{ false }}">
+                <span style="position:absolute;top:6px;left:6px;z-index:4;display:flex;align-items:center;gap:4px;font-family:var(--font-mono);font-weight:700;font-size:8px;line-height:1;letter-spacing:0.06em;text-transform:uppercase;padding:3px 5px;background:#0a0a0a;color:#ffffff;">
+                  <span style="width:4px;height:4px;border-radius:999px;background:var(--brand-green);"></span>{{ item.limitedLabel }}
+                </span>
+              </sc-if>
+              <sc-if value="{{ item.hasLink }}" hint-placeholder-val="{{ false }}">
+                <span class="fx-bag" onClick="{{ item.buy }}" aria-label="Buy" style="display:none;position:absolute;right:8px;bottom:8px;z-index:4;width:44px;height:44px;border-radius:999px;background:#1b1b1b;align-items:center;justify-content:center;cursor:pointer;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                </span>
+              </sc-if>
+              <div class="fx-reorder" style="position:absolute;top:8px;right:8px;z-index:3;display:flex;flex-direction:column;gap:4px;" onClick="{{ item.stopPropagation }}">
+                <span onClick="{{ item.moveUp }}" style="width:24px;height:24px;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                </span>
+                <span onClick="{{ item.moveDown }}" style="width:24px;height:24px;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <span style="font-family:var(--font-sans);font-weight:600;font-size:15px;color:var(--fg-invert);">{{ item.name }}</span>
+              <span style="font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--fg-invert);">{{ item.priceLabel }}</span>
+            </div>
+            <sc-if value="{{ item.hasSpecs }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span style="font-family:var(--font-mono);font-weight:600;font-size:12px;letter-spacing:0.03em;padding:3px 10px;border-radius:999px;border:1px solid #1b1b1b;color:#1b1b1b;text-transform:uppercase;">{{ item.fabric }}</span>
+                <span style="font-family:var(--font-mono);font-weight:600;font-size:12px;letter-spacing:0.03em;padding:3px 10px;border-radius:999px;border:1px solid #1b1b1b;color:#1b1b1b;text-transform:uppercase;">{{ item.fit }}</span>
+              </div>
+            </sc-if>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;" onClick="{{ item.stopPropagation }}">
+              <sc-for list="{{ item.swatches }}" as="sw" hint-placeholder-count="3">
+                <span onClick="{{ sw.onClick }}" title="{{ sw.name }}" style="width:22px;height:22px;border-radius:999px;background:{{ sw.hex }};cursor:pointer;box-shadow:{{ sw.ring }};display:inline-block;"></span>
+              </sc-for>
+              <sc-if value="{{ item.hasBack }}" hint-placeholder-val="{{ false }}">
+                <span onClick="{{ item.toggleBack }}" style="font-family:var(--font-mono);font-weight:700;font-size:12px;letter-spacing:0.04em;padding:7px 12px;background:#ffffff;color:#1b1b1b;text-transform:uppercase;cursor:pointer;">{{ item.backLabel }}</span>
+              </sc-if>
+              <sc-if value="{{ item.hasFit }}" hint-placeholder-val="{{ false }}">
+                <span onClick="{{ item.toggleFit }}" style="font-family:var(--font-mono);font-weight:700;font-size:12px;letter-spacing:0.04em;padding:7px 12px;background:#ffffff;color:#1b1b1b;text-transform:uppercase;cursor:pointer;">{{ item.fitLabel }}</span>
+              </sc-if>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <sc-for list="{{ item.sizeChips }}" as="sz" hint-placeholder-count="6">
+                <span style="font-family:var(--font-mono);font-weight:600;font-size:12px;padding:5px 10px;border:1.5px solid {{ sz.borderColor }};color:{{ sz.color }};text-decoration:{{ sz.strike }};">{{ sz.label }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ showPager }}" hint-placeholder-val="{{ false }}">
+        <div class="fx-pager" style="display:flex;align-items:center;justify-content:center;gap:24px;margin-top:24px;padding-top:32px;border-top:1px solid #e5e5e5;">
+          <span onClick="{{ pagePrev }}" style="width:44px;height:44px;border-radius:999px;border:1px solid #0a0a0a;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:{{ prevOpacity }};"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></span>
+          <div style="display:flex;align-items:center;gap:4px;">
+            <sc-for list="{{ pages }}" as="pg" hint-placeholder-count="4">
+              <span onClick="{{ pg.onClick }}" style="font-family:var(--font-sans);font-weight:700;font-size:15px;min-width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:{{ pg.bg }};color:{{ pg.color }};cursor:pointer;">{{ pg.label }}</span>
+            </sc-for>
+          </div>
+          <span onClick="{{ pageNext }}" style="width:44px;height:44px;border-radius:999px;border:1px solid #0a0a0a;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:{{ nextOpacity }};"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+        </div>
+      </sc-if>
+    </section>
+
+    <!-- 4. FEATURED — ESSENTIALS -->
+    <section class="fx-feat" style="position:relative;width:100%;aspect-ratio:21/10;min-height:480px;max-height:900px;background:var(--bg-2);overflow:hidden;">
+      <div style="position:absolute;inset:0;">
+        <image-slot id="featured-essentials" shape="rect" src="{{ essentialsHeroImage }}" placeholder="[ ESSENTIALS — ORDINARY CITY, HARD LIGHT ]"></image-slot>
+      </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(19,19,19,0) 45%, rgba(10,10,10,0.78) 100%);pointer-events:none;"></div>
+      <div class="fx-feat-eyebrow" style="position:absolute;top:48px;left:64px;font-family:var(--font-sans);font-weight:600;font-size:12px;letter-spacing:var(--tracking-label);color:var(--fg-3);text-transform:uppercase;">{{ t.featuredEyebrow }}</div>
+      <div class="fx-feat-title" style="position:absolute;left:64px;bottom:56px;">
+        <div style="font-family:var(--font-display);font-weight:800;font-size:88px;line-height:var(--lh-tight);letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--fg);">ESSENTIALS</div>
+        <div style="font-family:var(--font-sans);font-size:18px;color:var(--fg-2);margin-top:8px;">{{ t.legacyTagline }}</div>
+      </div>
+    </section>
+
+    <!-- 5. GRID — ESSENTIALS -->
+    <section class="fx-pad" style="background:#ffffff;padding:64px;">
+      <div class="fx-grid" style="column-count:3;column-gap:32px;">
+        <sc-for list="{{ essentials }}" as="item" hint-placeholder-count="5">
+          <div data-pid="{{ item.id }}" style="display:flex;flex-direction:column;gap:10px;cursor:pointer;break-inside:avoid;margin-bottom:40px;" onClick="{{ item.onClick }}">
+            <div class="fx-imgwrap {{ item.flipClass }}" style="position:relative;aspect-ratio:{{ item.ratio }};background:#ffffff;overflow:hidden;">
+              <image-slot id="{{ item.slotId }}" shape="rect" fit="cover" src="{{ item.image }}" placeholder="{{ item.placeholder }}"></image-slot>
+              <sc-if value="{{ item.backImage }}" hint-placeholder-val="{{ false }}"><img class="fx-back" data-src="{{ item.backImage }}" alt=""></sc-if>
+              <sc-if value="{{ item.limited }}" hint-placeholder-val="{{ false }}">
+                <span style="position:absolute;top:6px;left:6px;z-index:4;display:flex;align-items:center;gap:4px;font-family:var(--font-mono);font-weight:700;font-size:8px;line-height:1;letter-spacing:0.06em;text-transform:uppercase;padding:3px 5px;background:#0a0a0a;color:#ffffff;">
+                  <span style="width:4px;height:4px;border-radius:999px;background:var(--brand-green);"></span>{{ item.limitedLabel }}
+                </span>
+              </sc-if>
+              <sc-if value="{{ item.hasLink }}" hint-placeholder-val="{{ false }}">
+                <span class="fx-bag" onClick="{{ item.buy }}" aria-label="Buy" style="display:none;position:absolute;right:8px;bottom:8px;z-index:4;width:44px;height:44px;border-radius:999px;background:#1b1b1b;align-items:center;justify-content:center;cursor:pointer;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                </span>
+              </sc-if>
+              <div class="fx-reorder" style="position:absolute;top:8px;right:8px;z-index:3;display:flex;flex-direction:column;gap:4px;" onClick="{{ item.stopPropagation }}">
+                <span onClick="{{ item.moveUp }}" style="width:24px;height:24px;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                </span>
+                <span onClick="{{ item.moveDown }}" style="width:24px;height:24px;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1b1b1b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <span style="font-family:var(--font-sans);font-weight:600;font-size:15px;color:var(--fg-invert);">{{ item.name }}</span>
+              <span style="font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--fg-invert);">{{ item.priceLabel }}</span>
+            </div>
+            <sc-if value="{{ item.hasSpecs }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span style="font-family:var(--font-mono);font-weight:600;font-size:12px;letter-spacing:0.03em;padding:3px 10px;border-radius:999px;border:1px solid #1b1b1b;color:#1b1b1b;text-transform:uppercase;">{{ item.fabric }}</span>
+                <span style="font-family:var(--font-mono);font-weight:600;font-size:12px;letter-spacing:0.03em;padding:3px 10px;border-radius:999px;border:1px solid #1b1b1b;color:#1b1b1b;text-transform:uppercase;">{{ item.fit }}</span>
+              </div>
+            </sc-if>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;" onClick="{{ item.stopPropagation }}">
+              <sc-for list="{{ item.swatches }}" as="sw" hint-placeholder-count="3">
+                <span onClick="{{ sw.onClick }}" title="{{ sw.name }}" style="width:22px;height:22px;border-radius:999px;background:{{ sw.hex }};cursor:pointer;box-shadow:{{ sw.ring }};display:inline-block;"></span>
+              </sc-for>
+              <sc-if value="{{ item.hasBack }}" hint-placeholder-val="{{ false }}">
+                <span onClick="{{ item.toggleBack }}" style="font-family:var(--font-mono);font-weight:700;font-size:12px;letter-spacing:0.04em;padding:7px 12px;background:#ffffff;color:#1b1b1b;text-transform:uppercase;cursor:pointer;">{{ item.backLabel }}</span>
+              </sc-if>
+              <sc-if value="{{ item.hasFit }}" hint-placeholder-val="{{ false }}">
+                <span onClick="{{ item.toggleFit }}" style="font-family:var(--font-mono);font-weight:700;font-size:12px;letter-spacing:0.04em;padding:7px 12px;background:#ffffff;color:#1b1b1b;text-transform:uppercase;cursor:pointer;">{{ item.fitLabel }}</span>
+              </sc-if>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <sc-for list="{{ item.sizeChips }}" as="sz" hint-placeholder-count="6">
+                <span style="font-family:var(--font-mono);font-weight:600;font-size:12px;padding:5px 10px;border:1.5px solid {{ sz.borderColor }};color:{{ sz.color }};text-decoration:{{ sz.strike }};">{{ sz.label }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 5. FIT & FABRIC -->
+  <section class="fx-pad fx-pad-y" style="background:var(--bg);padding:100px 64px;">
+    <div style="font-family:var(--font-mono);font-weight:600;font-size:12px;letter-spacing:var(--tracking-expanded);color:var(--brand-green);text-transform:uppercase;margin-bottom:14px;">{{ t.fitFabricEyebrow }}</div>
+    <h2 class="fx-h2" style="font-family:var(--font-display);font-weight:800;font-size:44px;line-height:1.05;letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--fg);margin:0 0 56px 0;max-width:900px;">{{ t.fitFabricTitle }}</h2>
+    <div class="fx-2col" style="display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:64px;">
+      <div>
+        <div style="font-family:var(--font-display);font-weight:800;font-size:26px;letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--brand-green);margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--line);">{{ t.fabricHeading }}</div>
+        <sc-for list="{{ fabricSpecs }}" as="spec" hint-placeholder-count="6">
+          <div data-rv="spec" style="border-left:1px solid var(--line);padding:0 0 16px 18px;margin-bottom:16px;">
+            <div style="font-family:var(--font-mono);font-weight:700;font-size:14px;letter-spacing:0.03em;color:var(--fg);text-transform:uppercase;">{{ spec.label }}</div>
+            <div style="font-family:var(--font-mono);font-weight:500;font-size:14px;letter-spacing:0.02em;color:var(--fg-3);margin-top:4px;line-height:1.5;">{{ spec.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-weight:800;font-size:26px;letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--brand-green);margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--line);">{{ t.fitHeading }}</div>
+        <sc-for list="{{ fitSpecs }}" as="spec" hint-placeholder-count="4">
+          <div data-rv="spec" style="border-left:1px solid var(--line);padding:0 0 16px 18px;margin-bottom:16px;">
+            <div style="font-family:var(--font-mono);font-weight:700;font-size:14px;letter-spacing:0.03em;color:var(--fg);text-transform:uppercase;">{{ spec.label }}</div>
+            <div style="font-family:var(--font-mono);font-weight:500;font-size:14px;letter-spacing:0.02em;color:var(--fg-3);margin-top:4px;line-height:1.5;">{{ spec.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="margin-top:96px;">
+      <div style="font-family:var(--font-mono);font-weight:600;font-size:12px;letter-spacing:var(--tracking-expanded);color:var(--brand-green);text-transform:uppercase;margin-bottom:14px;">{{ t.sizeGuideEyebrow }}</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:32px;">
+        <h3 style="font-family:var(--font-display);font-weight:800;font-size:26px;letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--fg);margin:0;">{{ t.sizeGuideTitle }}</h3>
+        <div style="display:flex;gap:6px;">
+          <sc-for list="{{ unitOptions }}" as="u" hint-placeholder-count="2">
+            <x-import component-from-global-scope="FUTXODesignSystem_019e29.Button" variant="{{ u.variant }}" size="sm" on-click="{{ u.onClick }}" hint-size="auto,32px">{{ u.label }}</x-import>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;">
+        <sc-for list="{{ garmentTabs }}" as="tab" hint-placeholder-count="5">
+          <x-import component-from-global-scope="FUTXODesignSystem_019e29.Button" variant="{{ tab.variant }}" size="sm" on-click="{{ tab.onClick }}" hint-size="auto,32px">{{ tab.label }}</x-import>
+        </sc-for>
+      </div>
+      <div class="fx-size-wrap" style="display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px;align-items:start;">
+        <div class="fx-size-illo">
+          <sc-if value="{{ isTee }}" hint-placeholder-val="{{ true }}">
+            <svg width="100%" viewBox="0 0 140 170" fill="none" stroke="var(--fg-3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M45,20 C45,10 95,10 95,20 L95,30 L120,45 L110,65 L95,55 L95,150 L45,150 L45,55 L30,65 L20,45 L45,30 Z"></path>
+              <line x1="45" y1="92" x2="95" y2="92" stroke="var(--brand-green)"></line>
+              <line x1="45" y1="87" x2="45" y2="97" stroke="var(--brand-green)"></line>
+              <line x1="95" y1="87" x2="95" y2="97" stroke="var(--brand-green)"></line>
+              <text x="70" y="82" fill="var(--brand-green)" stroke="none" font-family="monospace" font-size="9" text-anchor="middle">CHEST</text>
+              <line x1="130" y1="30" x2="130" y2="150" stroke="var(--fg-3)"></line>
+              <line x1="125" y1="30" x2="135" y2="30" stroke="var(--fg-3)"></line>
+              <line x1="125" y1="150" x2="135" y2="150" stroke="var(--fg-3)"></line>
+              <text x="130" y="92" fill="var(--fg-3)" stroke="none" font-family="monospace" font-size="9" text-anchor="middle" transform="rotate(90 130 92)">LENGTH</text>
+              <line x1="98" y1="38" x2="115" y2="53" stroke="var(--fg-3)"></line>
+              <text x="118" y="40" fill="var(--fg-3)" stroke="none" font-family="monospace" font-size="8">SLEEVE</text>
+            </svg>
+          </sc-if>
+          <sc-if value="{{ isHoodie }}" hint-placeholder-val="{{ false }}">
+            <svg width="100%" viewBox="0 0 140 170" fill="none" stroke="var(--fg-3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M55,18 C55,8 85,8 85,18 M45,28 C45,15 95,15 95,28 L95,32 L128,60 L118,78 L95,62 L95,150 L45,150 L45,62 L22,78 L12,60 L45,32 Z"></path>
+              <circle cx="65" cy="22" r="1.5" fill="var(--fg-3)" stroke="none"></circle>
+              <circle cx="75" cy="22" r="1.5" fill="var(--fg-3)" stroke="none"></circle>
+              <line x1="45" y1="92" x2="95" y2="92" stroke="var(--brand-green)"></line>
+              <line x1="45" y1="87" x2="45" y2="97" stroke="var(--brand-green)"></line>
+              <line x1="95" y1="87" x2="95" y2="97" stroke="var(--brand-green)"></line>
+              <text x="70" y="82" fill="var(--brand-green)" stroke="none" font-family="monospace" font-size="9" text-anchor="middle">CHEST</text>
+              <line x1="132" y1="32" x2="132" y2="150" stroke="var(--fg-3)"></line>
+              <line x1="127" y1="32" x2="137" y2="32" stroke="var(--fg-3)"></line>
+              <line x1="127" y1="150" x2="137" y2="150" stroke="var(--fg-3)"></line>
+              <text x="132" y="92" fill="var(--fg-3)" stroke="none" font-family="monospace" font-size="9" text-anchor="middle" transform="rotate(90 132 92)">LENGTH</text>
+              <line x1="100" y1="45" x2="115" y2="75" stroke="var(--fg-3)"></line>
+              <text x="117" y="65" fill="var(--fg-3)" stroke="none" font-family="monospace" font-size="8">SLEEVE</text>
+            </svg>
+          </sc-if>
+          <sc-if value="{{ isCrewneck }}" hint-placeholder-val="{{ false }}">
+            <svg width="100%" viewBox="0 0 140 170" fill="none" stroke="var(--fg-3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M50,22 C50,14 90,14 90,22 L95,30 L128,58 L118,76 L95,60 L95,150 L45,150 L45,60 L22,76 L12,58 L45,30 Z"></path>
+              <line x1="45" y1="92" x2="95" y2="92" stroke="var(--brand-green)"></line>
+              <line x1="45" y1="87" x2="45" y2="97" stroke="var(--brand-green)"></line>
+              <line x1="95" y1="87" x2="95" y2="97" stroke="var(--brand-green)"></line>
+              <text x="70" y="82" fill="var(--brand-green)" stroke="none" font-family="monospace" font-size="9" text-anchor="middle">CHEST</text>
+              <line x1="132" y1="30" x2="132" y2="150" stroke="var(--fg-3)"></line>
+              <line x1="127" y1="30" x2="137" y2="30" stroke="var(--fg-3)"></line>
+              <line x1="127" y1="150" x2="137" y2="150" stroke="var(--fg-3)"></line>
+              <text x="132" y="92" fill="var(--fg-3)" stroke="none" font-family="monospace" font-size="9" text-anchor="middle" transform="rotate(90 132 92)">LENGTH</text>
+              <line x1="98" y1="43" x2="113" y2="73" stroke="var(--fg-3)"></line>
+              <text x="115" y="63" fill="var(--fg-3)" stroke="none" font-family="monospace" font-size="8">SLEEVE</text>
+            </svg>
+          </sc-if>
+        </div>
+        <div>
+          <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+           <div class="fx-size-inner">
+            <div style="display:grid;grid-template-columns:90px repeat(6, minmax(46px,1fr));border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:10px;">
+              <div></div>
+              <sc-for list="{{ sizeGuideSizes }}" as="sz" hint-placeholder-count="6">
+                <div style="font-family:var(--font-mono);font-weight:700;font-size:12px;color:var(--fg);text-align:center;">{{ sz }}</div>
+              </sc-for>
+            </div>
+            <sc-for list="{{ sizeGuideRows }}" as="row" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:90px repeat(6, minmax(46px,1fr));padding:8px 0;border-bottom:1px solid var(--line);">
+                <div style="font-family:var(--font-mono);font-weight:600;font-size:12px;letter-spacing:0.03em;color:var(--fg-3);text-transform:uppercase;">{{ row.label }}</div>
+                <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="6">
+                  <div style="font-family:var(--font-mono);font-size:14px;color:var(--fg);text-align:center;">{{ cell }}</div>
+                </sc-for>
+              </div>
+            </sc-for>
+           </div>
+          </div>
+          <p style="font-family:var(--font-sans);font-size:14px;color:var(--fg-3);margin:16px 0 0 0;">{{ sizeGuideAdvice }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CLOSING -->
+  <section class="fx-pad fx-pad-y" style="background:var(--bg-2);padding:120px 64px;text-align:center;">
+    <div style="font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:var(--tracking-display);color:var(--fg-3);text-transform:uppercase;margin-bottom:28px;">FUTXO</div>
+    <p class="fx-closing" style="font-family:var(--font-display);font-weight:700;font-size:36px;line-height:var(--lh-snug);letter-spacing:var(--tracking-tight);text-transform:uppercase;color:var(--fg);margin:0 auto 40px auto;max-width:760px;">{{ t.closing }}</p>
+    <x-import component-from-global-scope="FUTXODesignSystem_019e29.Button" variant="accent" size="md" on-click="{{ goToShop }}" hint-size="auto,44px">{{ t.shopCta }}</x-import>
+  </section>
+
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{},&quot;activeState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;ALL&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;ALL&quot;,&quot;PRE-MATCH&quot;,&quot;MATCHDAY&quot;,&quot;VOID&quot;,&quot;GLORY&quot;,&quot;LEGACY&quot;],&quot;section&quot;:&quot;Catálogo&quot;},&quot;language&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;EN&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;ES&quot;,&quot;EN&quot;],&quot;section&quot;:&quot;Catálogo&quot;}}">
+const FABRIC_SPECS = [
+  { label: 'HEAVYWEIGHT', en: 'Thick 100% cotton, 7+ oz. Structured, holds its shape.', es: 'Algodón grueso 100%, 7+ oz. Estructurado, mantiene la forma.' },
+  { label: 'ORGANIC', en: '100% organic ring-spun cotton, 200 g/m². Soft and breathable.', es: 'Algodón orgánico ring-spun 100%, 200 g/m². Suave y transpirable.' },
+  { label: 'GARMENT-DYED', en: 'Washed after dyeing for a lived-in color and softer hand.', es: 'Lavado después del teñido, color gastado y tacto más suave.' },
+  { label: 'LIGHTWEIGHT', en: 'Soft cotton with a bit of stretch. Easy, everyday feel.', es: 'Algodón suave con algo de elasticidad. Cómodo para el diario.' },
+  { label: 'FRENCH TERRY', en: 'Light loopback knit. Hoodie comfort without the weight.', es: 'Tejido loopback ligero. Comodidad de hoodie sin el peso.' },
+  { label: 'FLEECE', en: 'Cotton blend, brushed inside. For hoodies, crews and sweatpants.', es: 'Mezcla de algodón, cepillado por dentro. Para hoodies, crews y sweatpants.' },
+];
+const FIT_SPECS = [
+  { label: 'OVERSIZED', en: 'Dropped shoulders, longer body.', es: 'Hombros caídos, cuerpo más largo.' },
+  { label: 'BOXY', en: 'Wide and cropped, square shape.', es: 'Ancho y corto, forma cuadrada.' },
+  { label: 'RELAXED', en: 'Easy cut, a bit of room without going oversized.', es: 'Corte cómodo, con algo de espacio sin llegar a oversized.' },
+  { label: 'REGULAR', en: 'Classic cut, true to size.', es: 'Corte clásico, fiel a la talla.' },
+];
+
+const GARMENT_TYPES = [
+  { key: 'oversized', label: 'OVERSIZED TEE', illustration: 'tee', sizes: ['XS','S','M','L','XL','2XL'], chest: [40,42,44,46,48,50], length: [27,28,29,30,31,32], sleeve: [8,8.5,9,9.5,10,10.5],
+    adviceEN: 'True to size for the intended look. Size down for a closer fit.', adviceES: 'Fiel a la talla para el look buscado. Baja una talla si prefieres un fit más cerrado.' },
+  { key: 'boxy', label: 'BOXY TEE', illustration: 'tee', sizes: ['XS','S','M','L','XL','2XL'], chest: [42,44,46,48,50,52], length: [24,25,26,27,28,29], sleeve: [7.5,8,8.5,9,9.5,10],
+    adviceEN: 'Runs wide and short. Size up if you want more length.', adviceES: 'Corte ancho y corto. Sube una talla si buscas más largo.' },
+  { key: 'regular', label: 'REGULAR TEE', illustration: 'tee', sizes: ['XS','S','M','L','XL','2XL'], chest: [36,38,40,42,44,46], length: [26,27,28,29,30,31], sleeve: [7,7.5,8,8.5,9,9.5],
+    adviceEN: 'True to size.', adviceES: 'Fiel a la talla.' },
+  { key: 'hoodie', label: 'HOODIE', illustration: 'hoodie', sizes: ['XS','S','M','L','XL','2XL'], chest: [42,44,46,48,50,52], length: [27,28,29,30,31,32], sleeve: [24,24.5,25,25.5,26,26.5],
+    adviceEN: 'True to size.', adviceES: 'Fiel a la talla.' },
+  { key: 'crewneck', label: 'CREWNECK', illustration: 'crewneck', sizes: ['XS','S','M','L','XL','2XL'], chest: [40,42,44,46,48,50], length: [26,27,28,29,30,31], sleeve: [23,23.5,24,24.5,25,25.5],
+    adviceEN: 'True to size.', adviceES: 'Fiel a la talla.' },
+];
+
+const fmtPrice = (n) => '$' + (Number.isInteger(Number(n)) ? String(Number(n)) : Number(n).toFixed(2));
+const STATES = [
+  { key: 'PRE-MATCH', sub: 'The Warmup Code' },
+  { key: 'MATCHDAY', sub: '90:00 State' },
+  { key: 'VOID', sub: 'No Signal' },
+  { key: 'GLORY', sub: 'After the Whistle' },
+  { key: 'LEGACY', sub: 'Heritage' },
+];
+
+const COPY = {
+  ES: {
+    heroEyebrow: 'CATÁLOGO — DROP 01',
+    heroHeadline: 'LA LÍNEA COMPLETA.',
+    dlPdf: 'Descargar PDF', shopDrop: 'Comprar Drop 01', statCollections: 'COLECCIONES', statPieces: 'PIEZAS', statFrom: 'DESDE',
+    heroSub: 'Cortes, telas, colores y precios. Todo en un solo lugar.',
+    featuredEyebrow: 'PIEZA DESTACADA',
+    closing: 'No hace falta que lo expliques. El que sabe, sabe.',
+    all: 'TODOS',
+    shop: 'Comprar',
+    heroChamferLabel: 'CINCO EMOCIONES. UN SOLO JUEGO.',
+    limited: 'Edición limitada',
+    shopCta: 'IR A LA TIENDA',
+    back: '← VOLVER',
+    navDrops: 'DROPS',
+    navShop: 'TIENDA',
+    navContact: 'CONTACTO',
+    legacyTagline: 'Esenciales para cada momento',
+    specSerial: 'SERIE',
+    specFit: 'AJUSTE',
+    specFabric: 'TELA',
+    oversized: 'OVERSIZED',
+    fabricValue: 'ALGODÓN PREMIUM',
+    colorLabel: 'COLOR',
+    sizeLabel: 'TALLAS',
+    grabYours: 'CONSIGUE EL TUYO',
+    viewBack: 'VER ESPALDA',
+    viewFront: 'VER FRENTE',
+    viewFit: 'VER FIT',
+    fitFabricEyebrow: 'LA FICHA TÉCNICA',
+    fitFabricTitle: 'AJUSTE Y TELA. SIN SORPRESAS.',
+    fabricHeading: 'TELA',
+    fitHeading: 'AJUSTE',
+    sizeGuideEyebrow: 'LA GUÍA',
+    sizeGuideTitle: 'GUÍA DE TALLAS',
+    chestLabel: 'PECHO',
+    lengthLabel: 'LARGO',
+    sleeveLabel: 'MANGA',
+  },
+  EN: {
+    heroEyebrow: 'CATALOG — DROP 01',
+    heroHeadline: 'THE FULL LINEUP.',
+    dlPdf: 'Download PDF', shopDrop: 'Shop Drop 01', statCollections: 'COLLECTIONS', statPieces: 'PIECES', statFrom: 'FROM',
+    heroSub: 'Fits, fabrics, colors and prices. Everything in one place.',
+    featuredEyebrow: 'FEATURED PIECE',
+    closing: 'No need to explain it. If you know, you know.',
+    all: 'ALL',
+    shop: 'Shop',
+    heroChamferLabel: 'FIVE EMOTIONS. ONE GAME.',
+    limited: 'Limited edition',
+    shopCta: 'GO TO SHOP',
+    back: '← BACK',
+    navDrops: 'DROPS',
+    navShop: 'SHOP',
+    navContact: 'CONTACT',
+    legacyTagline: 'Essentials for every moment',
+    specSerial: 'SERIAL',
+    specFit: 'FIT',
+    specFabric: 'FABRIC',
+    oversized: 'OVERSIZED',
+    fabricValue: 'PREMIUM COTTON',
+    colorLabel: 'COLOR',
+    sizeLabel: 'SIZES',
+    grabYours: 'GRAB YOURS',
+    viewBack: 'VIEW BACK',
+    viewFront: 'VIEW FRONT',
+    viewFit: 'VIEW FIT',
+    fitFabricEyebrow: 'THE SPEC SHEET',
+    fitFabricTitle: 'FIT & FABRIC. NO SURPRISES.',
+    fabricHeading: 'FABRIC',
+    fitHeading: 'FIT',
+    sizeGuideEyebrow: 'THE GUIDE',
+    sizeGuideTitle: 'SIZE GUIDE',
+    chestLabel: 'CHEST',
+    lengthLabel: 'LENGTH',
+    sleeveLabel: 'SLEEVE',
+  },
+};
+
+class Component extends DCLogic {
+  state = {
+    activeState: this.props.activeState || 'ALL',
+    language: this.props.language || 'EN',
+    products: [],
+    sizeGuideTab: 'oversized',
+    sizeGuideUnit: 'IN',
+  };
+
+  componentDidMount() {
+    import('./products-data.js').then((m) => {
+      const products = m.FUTXO_PRODUCTS || [];
+      let order = {"x0":9,"x1":11,"x2":14,"x3":3,"x4":18,"x5":5,"x6":4,"x7":1,"x8":8,"x9":10,"x10":0,"x11":24,"x12":19,"x13":7,"x14":17,"x15":22,"x16":15,"x17":20,"x18":6,"x19":13,"x20":21,"x21":23,"x22":16,"x23":2,"x24":12,"x25":25};
+      try { const saved = JSON.parse(localStorage.getItem('futxo-catalog-order') || 'null'); if (saved) order = Object.assign(order, saved); } catch (e) {}
+      products.forEach((p, i) => { if (typeof order[p.id] !== 'number') order[p.id] = i; });
+      this._order = order;
+      this.setState({ products });
+    });
+    this.setupReveal();
+  }
+
+  componentDidUpdate() {
+    this.runFlip();
+    this.setupReveal();
+  }
+
+  captureFlip = () => {
+    const pos = {};
+    document.querySelectorAll('.fx-grid [data-pid]').forEach(el => { pos[el.getAttribute('data-pid')] = el.getBoundingClientRect(); });
+    this._flip = pos;
+  };
+
+  runFlip = () => {
+    const pos = this._flip; if (!pos) return; this._flip = null;
+    document.querySelectorAll('.fx-grid [data-pid]').forEach(el => {
+      const o = pos[el.getAttribute('data-pid')]; if (!o) return;
+      const n = el.getBoundingClientRect();
+      const dx = o.left - n.left, dy = o.top - n.top;
+      if (!dx && !dy) return;
+      el.style.transition = 'none'; el.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
+      void el.offsetWidth;
+      el.style.transition = 'transform .45s cubic-bezier(.2,.7,.2,1)'; el.style.transform = '';
+      setTimeout(() => { el.style.transition = ''; }, 480);
+    });
+  };
+
+  setupReveal = () => {
+    document.querySelectorAll('img.fx-back[data-src]').forEach(im => { const u = im.getAttribute('data-src'); if (u && im.getAttribute('src') !== u) im.setAttribute('src', u); });
+    if (!window.IntersectionObserver) return;
+    if (!this._io) {
+      this._io = new IntersectionObserver((es) => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target; el.classList.add('fx-in'); this._io.unobserve(el);
+        const d = parseFloat(el.style.transitionDelay) || 0;
+        setTimeout(() => { el.style.transitionDelay = ''; }, d + 500);
+      }), { threshold: 0.06, rootMargin: '0px 0px -4% 0px' });
+    }
+    document.querySelectorAll('.fx-grid > div, [data-rv]').forEach(el => {
+      if (el.__rv) return; el.__rv = 1;
+      let d = 0;
+      if (el.hasAttribute('data-rv')) d = Array.from(el.parentNode.children).filter(c => c.hasAttribute('data-rv')).indexOf(el) * 90;
+      else d = (Array.from(el.parentNode.children).indexOf(el) % 3) * 70;
+      el.style.transitionDelay = d + 'ms'; el.classList.add('fx-rv'); this._io.observe(el);
+    });
+  };
+
+  loadRatio = (id, url) => {
+    if (!url) return;
+    const cache = this._imgRatios || (this._imgRatios = {});
+    const loading = this._ratioLoading || (this._ratioLoading = {});
+    if (cache[id] || loading[url]) return;
+    loading[url] = true;
+    const img = new Image();
+    img.onload = () => {
+      if (img.naturalWidth && img.naturalHeight) {
+        cache[id] = img.naturalWidth + ' / ' + img.naturalHeight;
+        this.forceUpdate();
+      }
+    };
+    img.onerror = () => { (this._badImgs || (this._badImgs = {}))[url] = true; this.forceUpdate(); };
+    img.src = url;
+  };
+
+  moveProduct = (list, id, dir) => () => {
+    const order = this._order || (this._order = {});
+    const sorted = list.slice().sort((a, b) => (order[a.id] ?? 0) - (order[b.id] ?? 0));
+    const idx = sorted.findIndex(p => p.id === id);
+    const j = idx + dir;
+    if (j < 0 || j >= sorted.length) return;
+    const a = sorted[idx], b = sorted[j];
+    const tmp = order[a.id]; order[a.id] = order[b.id]; order[b.id] = tmp;
+    try { localStorage.setItem('futxo-catalog-order', JSON.stringify(order)); } catch (e) {}
+    this.forceUpdate();
+  };
+
+  renderVals() {
+    const { activeState, language, products, sizeGuideTab, sizeGuideUnit } = this.state;
+    const t = COPY[language] || COPY.EN;
+    const colorSel = this._colorSel || (this._colorSel = {});
+
+    const backSel = this._backSel || (this._backSel = {});
+    const fitSel = this._fitSel || (this._fitSel = {});
+    const order = this._order || {};
+    const withOrder = (list) => list.slice().sort((a, b) => (order[a.id] ?? 0) - (order[b.id] ?? 0));
+    const cardData = (p, list) => {
+      const idx = colorSel[p.id] || 0;
+      const currentColor = p.colors[idx] || p.colors[0] || {};
+      const showBack = !!backSel[p.id] && !!currentColor.imageBack;
+      const showFit = !!fitSel[p.id] && !!currentColor.imageFit;
+      const swatches = p.colors.map((c, i) => ({
+        name: c.name,
+        hex: c.hex,
+        onClick: () => { colorSel[p.id] = i; backSel[p.id] = false; fitSel[p.id] = false; this.forceUpdate(); },
+        ring: i === idx ? '0 0 0 2px #fff, 0 0 0 3px var(--brand-green)' : '0 0 0 1px var(--line)',
+      }));
+      const sizeChips = (p.allSizes || []).map(sizeLabel => {
+        const available = (currentColor.availableSizes || []).includes(sizeLabel);
+        return {
+          label: sizeLabel,
+          strike: available ? 'none' : 'line-through',
+          color: available ? 'var(--fg-invert)' : 'var(--fg-4)',
+          borderColor: available ? 'var(--fg-invert)' : 'var(--line)',
+        };
+      });
+      const colorParam = encodeURIComponent(currentColor.name || '');
+      const bad = this._badImgs || {};
+      let imgUrl = showFit ? currentColor.imageFit : (showBack ? currentColor.imageBack : (currentColor.image || ''));
+      if (bad[imgUrl]) { const alts = []; p.colors.forEach(cc => { alts.push(cc.image, cc.imageBack); }); imgUrl = alts.find(u => u && !bad[u]) || imgUrl; }
+      const ratioCache = this._imgRatios || (this._imgRatios = {});
+      this.loadRatio(p.id, imgUrl);
+      return {
+        ...p,
+        slotId: 'img-' + p.id,
+        name: language === 'ES' ? (p.shortNameEs || p.nameEs || p.name) : (p.shortName || p.name),
+        image: imgUrl,
+        ratio: ratioCache[p.id] || '4 / 5',
+        placeholder: '[ ' + p.name.toUpperCase() + ' ]',
+        swatches,
+        sizeChips,
+        hasBack: !!currentColor.imageBack,
+        backImage: (!showBack && !showFit && currentColor.imageBack && !bad[currentColor.imageBack]) ? currentColor.imageBack : '',
+        flipClass: (!showBack && !showFit && currentColor.imageBack && !bad[currentColor.imageBack]) ? 'fx-hb' : '',
+        backLabel: showBack ? t.viewFront : t.viewBack,
+        toggleBack: () => { fitSel[p.id] = false; backSel[p.id] = !showBack; this.forceUpdate(); },
+        hasSpecs: !!(p.fabric || p.fit),
+        fabric: p.fabric || '',
+        fit: p.fit || '',
+        hasFit: !!currentColor.imageFit,
+        fitLabel: showFit ? t.viewFront : t.viewFit,
+        toggleFit: () => { backSel[p.id] = false; fitSel[p.id] = !showFit; this.forceUpdate(); },
+        stopPropagation: (e) => e && e.stopPropagation && e.stopPropagation(),
+        onClick: () => { if (p.link) window.open(p.link + (p.link.includes('?') ? '&' : '?') + 'color=' + colorParam, '_blank'); },
+        hasLink: !!p.link,
+        priceLabel: fmtPrice(p.price),
+        limited: !!p.limited,
+        limitedLabel: t.limited,
+        buy: (e) => { e && e.stopPropagation && e.stopPropagation(); if (p.link) window.open(p.link + (p.link.includes('?') ? '&' : '?') + 'color=' + colorParam, '_blank'); },
+        moveUp: this.moveProduct(list, p.id, -1),
+        moveDown: this.moveProduct(list, p.id, 1),
+      };
+    };
+
+    const dropProducts = products.filter(p => p.season !== 'ESSENTIALS');
+    const essentialsProducts = products.filter(p => p.season === 'ESSENTIALS');
+
+    const visibleDrop = withOrder(dropProducts.filter(p => activeState === 'ALL' || p.season === activeState));
+    const visibleEssentials = withOrder(essentialsProducts);
+    const PER_PAGE = 6;
+    const paged = activeState === 'ALL';
+    const pageCount = paged ? Math.max(1, Math.ceil(visibleDrop.length / PER_PAGE)) : 1;
+    const page = Math.min(this.state.page || 0, pageCount - 1);
+    const goPage = (n) => { this.setState({ page: Math.max(0, Math.min(pageCount - 1, n)) }); const el = document.getElementById('capsule01-section'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' }); };
+    const pageSlice = paged ? visibleDrop.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE) : visibleDrop;
+    const grid1 = pageSlice.map(p => cardData(p, visibleDrop));
+    const showPager = paged && pageCount > 1;
+    const pages = Array.from({ length: pageCount }, (_, i) => ({ label: String(i + 1), bg: i === page ? '#0a0a0a' : 'transparent', color: i === page ? '#ffffff' : '#8a8a8a', onClick: () => goPage(i) }));
+    const pagePrev = () => goPage(page - 1);
+    const pageNext = () => goPage(page + 1);
+    const prevOpacity = page === 0 ? 0.3 : 1;
+    const nextOpacity = page === pageCount - 1 ? 0.3 : 1;
+    const essentials = visibleEssentials.map(p => cardData(p, visibleEssentials));
+
+    const navItems = [
+      { key: 'ALL', label: t.all, onClick: () => { this.captureFlip(); this.setState({ activeState: 'ALL', page: 0 }); }, variant: activeState === 'ALL' ? 'accent' : 'ghost' },
+      ...STATES.map(s => ({
+        key: s.key,
+        label: s.key,
+        onClick: () => { this.captureFlip(); this.setState({ activeState: s.key }); },
+        variant: activeState === s.key ? 'accent' : 'ghost',
+      })),
+    ];
+
+    const seasonLayout = [
+      { key: 'PRE-MATCH', gridColumn: '1 / 3', gridRow: '1 / 2' },
+      { key: 'MATCHDAY', gridColumn: '1 / 3', gridRow: '2 / 4' },
+      { key: 'VOID', gridColumn: '3 / 4', gridRow: '1 / 3' },
+      { key: 'GLORY', gridColumn: '4 / 5', gridRow: '1 / 3' },
+      { key: 'LEGACY', gridColumn: '3 / 5', gridRow: '3 / 4' },
+    ];
+    const seasonGen = this._seasonGen || (this._seasonGen = {});
+    const seasons = seasonLayout.map(sl => {
+      const st = STATES.find(s => s.key === sl.key);
+      const gen = seasonGen[sl.key] || 0;
+      const seasonProducts = dropProducts.filter(p => p.season === sl.key);
+      const minPrice = seasonProducts.length ? Math.min(...seasonProducts.map(p => p.price)) : 0;
+      return {
+        ...sl,
+        image: 'img/slot-season-' + sl.key.toLowerCase() + '-0.' + (sl.key === 'PRE-MATCH' ? 'png' : 'webp'),
+        sub: st.sub,
+        meta: seasonProducts.length ? ('PIECES · FROM ' + fmtPrice(minPrice)) : '',
+        slotId: 'season-' + sl.key.toLowerCase() + '-' + gen,
+        onClick: () => { this.setState({ activeState: sl.key }); document.getElementById('capsule01-section').scrollIntoView({ behavior: 'smooth' }); },
+        clearImage: (e) => { e && e.stopPropagation && e.stopPropagation(); seasonGen[sl.key] = gen + 1; this.forceUpdate(); },
+      };
+    });
+
+    const prematchHero = dropProducts.find(p => p.season === 'PRE-MATCH');
+    const legacyHero = dropProducts.find(p => p.season === 'LEGACY');
+    const heroPicks = [prematchHero, legacyHero].filter(Boolean);
+    const heroCardLabels = { 'PRE-MATCH': 'The Warmup Code', 'LEGACY': 'Heritage Back' };
+    const heroCards = heroPicks.map(p => ({
+      slotId: 'hero-card-v2-' + p.id,
+      image: ({ 'PRE-MATCH': 'uploads/hero-card-warmup.png', 'LEGACY': 'uploads/hero-card-heritage.png' })[p.season] || (p.colors[0] || {}).image || '',
+      placeholder: '[ ' + p.season + ' ]',
+      name: heroCardLabels[p.season] || p.season,
+      onClick: () => { this.setState({ activeState: p.season }); document.getElementById('capsule01-section').scrollIntoView({ behavior: 'smooth' }); },
+    }));
+
+    const minAll = dropProducts.length ? Math.min(...dropProducts.map(p => p.price)) : 0;
+    const heroStats = { collections: '5 ' + t.statCollections, pieces: '40 ' + t.statPieces, from: t.statFrom + ' ' + fmtPrice(minAll) };
+    const heroIndex = seasons.map((s, i) => ({ num: String(i + 1).padStart(2, '0'), key: s.key, sub: s.sub, onClick: () => { this.captureFlip(); this.setState({ activeState: s.key, page: 0 }); setTimeout(() => { const el = document.getElementById('capsule01-section'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' }); }, 60); } }));
+    const essentialsHeroImage = 'img/essentials-hero.png';
+
+    const fabricSpecs = FABRIC_SPECS.map(s => ({ label: s.label, desc: language === 'ES' ? s.es : s.en }));
+    const fitSpecs = FIT_SPECS.map(s => ({ label: s.label, desc: language === 'ES' ? s.es : s.en }));
+
+    const activeGarment = GARMENT_TYPES.find(g => g.key === sizeGuideTab) || GARMENT_TYPES[0];
+    const toCm = (inches) => (Math.round(inches * 2.54 * 2) / 2).toString();
+    const fmt = (v) => sizeGuideUnit === 'CM' ? toCm(v) : v.toString();
+    const garmentTabs = GARMENT_TYPES.map(g => ({
+      key: g.key, label: g.label,
+      variant: g.key === sizeGuideTab ? 'accent' : 'ghost',
+      onClick: () => this.setState({ sizeGuideTab: g.key }),
+    }));
+    const unitOptions = ['IN', 'CM'].map(u => ({
+      key: u, label: u,
+      variant: u === sizeGuideUnit ? 'accent' : 'ghost',
+      onClick: () => this.setState({ sizeGuideUnit: u }),
+    }));
+    const sizeGuideSizes = activeGarment.sizes;
+    const sizeGuideRows = [
+      { label: t.chestLabel, cells: activeGarment.chest.map(fmt) },
+      { label: t.lengthLabel, cells: activeGarment.length.map(fmt) },
+      { label: t.sleeveLabel, cells: activeGarment.sleeve.map(fmt) },
+    ];
+    const sizeGuideAdvice = language === 'ES' ? activeGarment.adviceES : activeGarment.adviceEN;
+    const isTee = activeGarment.illustration === 'tee';
+    const isHoodie = activeGarment.illustration === 'hoodie';
+    const isCrewneck = activeGarment.illustration === 'crewneck';
+
+    return {
+      t,
+      fabricSpecs,
+      fitSpecs,
+      garmentTabs,
+      unitOptions,
+      sizeGuideSizes,
+      sizeGuideRows,
+      sizeGuideAdvice,
+      isTee,
+      isHoodie,
+      isCrewneck,
+      seasons,
+      heroCards,
+      navItems,
+      grid1,
+      showPager, pages, pagePrev, pageNext, prevOpacity, nextOpacity,
+      essentials,
+      essentialsHeroImage,
+      heroStats,
+      heroIndex,
+      downloadPdf: (e) => { e && e.preventDefault && e.preventDefault(); window.print(); },
+      goToShop: () => window.open('https://futxo.com', '_blank'),
+      goToPreMatch: () => { this.setState({ activeState: 'PRE-MATCH' }); document.getElementById('capsule01-section').scrollIntoView({ behavior: 'smooth' }); },
+      setLangEs: () => this.setState({ language: 'ES' }),
+      setLangEn: () => this.setState({ language: 'EN' }),
+      langEsVariant: language === 'ES' ? 'accent' : 'ghost',
+      langEnVariant: language === 'EN' ? 'accent' : 'ghost',
+    };
+  }
+}
+
+</script>
+</body>
+</html>
