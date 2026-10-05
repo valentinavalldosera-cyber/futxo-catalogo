@@ -1,0 +1,423 @@
+/* ============================================================
+   FUTXO — Colors & Type
+   Soccer culture. Premium minimalism. Digital streetwear.
+   ============================================================ */
+
+/* ----- Fonts -----------------------------------------------
+   Body: Inter — variable font, served locally.
+   Display: PP Neue Montreal — Thin / Book / Medium / Bold + italics, local.
+   Mono: JetBrains Mono — pulled from Google Fonts (no local file supplied).
+   ------------------------------------------------------------ */
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+/* ---------- Plus Jakarta Sans (self-declared so the DS compiler indexes it as a real font) ---------- */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/plus-jakarta-sans@latest/files/plus-jakarta-sans-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/plus-jakarta-sans@latest/files/plus-jakarta-sans-latin-800-normal.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Space Grotesk (self-declared so the DS compiler indexes it as a real font) ---------- */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@latest/files/space-grotesk-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@latest/files/space-grotesk-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@latest/files/space-grotesk-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@latest/files/space-grotesk-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/instrument-serif@latest/files/instrument-serif-latin-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/instrument-serif@latest/files/instrument-serif-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Inter (variable, 100–900) ---------- */
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-VariableFont_opsz_wght.ttf") format("truetype-variations"),
+       url("./fonts/Inter-VariableFont_opsz_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-Italic-VariableFont_opsz_wght.ttf") format("truetype-variations"),
+       url("./fonts/Inter-Italic-VariableFont_opsz_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- PP Neue Montreal ---------- */
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./fonts/ppneuemontreal-thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./fonts/ppneuemontreal-book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./fonts/ppneuemontreal-italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./fonts/ppneuemontreal-medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./fonts/ppneuemontreal-semibolditalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./fonts/ppneuemontreal-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- Color: Surfaces ---------- */
+  --bg:        #1b1b1b;   /* canonical brand background */
+  --bg-2:      #131313;   /* deeper field, hero / full-bleed */
+  --bg-3:      #0a0a0a;   /* near-black, modals & overlays */
+  --surface:   #232323;   /* raised card on bg */
+  --surface-2: #2c2c2c;   /* hover / interactive surface */
+  --line:      #2e2e2e;   /* default hairline divider */
+  --line-2:    #3a3a3a;   /* stronger divider, input border */
+
+  /* ---------- Color: Foreground ---------- */
+  --fg:        #f5f5f4;   /* primary text on dark */
+  --fg-2:      #c9c9c7;   /* secondary text */
+  --fg-3:      #8a8a87;   /* tertiary / meta */
+  --fg-4:      #5a5a57;   /* disabled / faint label */
+  --fg-invert: #1b1b1b;   /* text on light surfaces */
+
+  /* ---------- Color: Brand ----------
+     Pulled from the app-icon gradient ring + wordmark.
+     Mono brand is black/white; accents are used sparingly
+     on focus, live indicators, CTA rims. */
+  --brand-ink:    #0b0b0b;
+  --brand-bone:   #f5f5f4;
+  --brand-green:      #2FBE6A;   /* pitch green — signature accent, grass not neon */
+  --brand-green-deep: #0F4A2E;   /* deep field green — gradient stop, large graphic blocks */
+  --brand-blue:       #8A7CE6;   /* signal violet — city-light accent, used sparingly */
+  --brand-grad:   linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-deep) 100%);
+  --brand-grad-soft: linear-gradient(135deg, rgba(47,190,106,0.22) 0%, rgba(15,74,46,0.22) 100%); /* @kind color */
+
+  /* ---------- Color: Semantic ----------
+     FUTXO doesn't do red cards / yellow cards.
+     "Live" and "active" use brand green; "info" uses brand blue.
+     If a destructive action genuinely needs to feel different,
+     use --brand-ink (black tile) — never a red. */
+  --live:    var(--brand-green);
+  --ok:      var(--brand-green);
+  --info:    var(--brand-blue);
+  --live-signal: #E5399B; /* fuchsia — live-broadcast / on-air signal chip, never red */
+  --warn:    #FFB020;
+
+  /* ---------- Type: Families ---------- */
+  --font-display: "PP Neue Montreal", "Inter Tight", Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-sans:    "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-capsule: "Instrument Serif", Georgia, serif; /* editorial accent — capsule drops, overlays, never body text */
+  --font-headline: "Plus Jakarta Sans", "PP Neue Montreal", sans-serif; /* rounded poster headline — hero statements, warmer/less tech than --font-display */
+
+  /* ---------- Type: Scale ----------
+     Built around a sharp grotesque. Display is wide & set
+     in UPPERCASE with tight tracking. Body is Inter, set
+     in sentence case at comfortable line-heights. */
+  --fs-xs:   12px;
+  --fs-sm:   14px;
+  --fs-base: 16px;
+  --fs-md:   18px;
+  --fs-lg:   22px;
+  --fs-xl:   28px;
+  --fs-2xl:  36px;
+  --fs-3xl:  48px;
+  --fs-4xl:  64px;
+  --fs-5xl:  88px;
+  --fs-6xl:  128px;
+
+  --lh-tight:  1.02; /* @kind font */
+  --lh-snug:   1.12; /* @kind font */
+  --lh-normal: 1.5; /* @kind font */
+  --lh-loose:  1.65; /* @kind font */
+
+  --tracking-display: -0.02em;
+  --tracking-tight:   -0.01em;
+  --tracking-normal:  0;
+  --tracking-label:   0.08em;   /* small uppercase eyebrows */
+  --tracking-shout:   0.14em;   /* huge uppercase callouts */
+  --tracking-condensed: -0.05em; /* ultra-condensed capsule headlines, paired with scaleX squeeze */
+  --tracking-expanded:  0.22em; /* expanded capsule labels / drop codes */
+  --lh-overlay: 0.86; /* @kind other */
+
+  /* ---------- Radii ---------- */
+  --r-xs:  4px;
+  --r-sm:  6px;
+  --r-md:  10px;
+  --r-lg:  14px;
+  --r-xl:  20px;
+  --r-2xl: 28px;
+  --r-pill: 999px;
+
+  /* ---------- Spacing (4pt) ---------- */
+  --s-0: 0px;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+
+  /* ---------- Elevation ---------- */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.35);
+  --shadow-md: 0 6px 18px rgba(0,0,0,0.45);
+  --shadow-lg: 0 24px 56px rgba(0,0,0,0.55);
+  --ring-focus: 0 0 0 2px var(--bg), 0 0 0 4px var(--brand-green);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(.2,.7,.2,1); /* @kind other */
+  --ease-in:  cubic-bezier(.6,.0,.8,.2); /* @kind other */
+  --ease-snap: cubic-bezier(.2,1,.3,1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur-base: 200ms; /* @kind other */
+  --dur-slow: 360ms; /* @kind other */
+
+  /* ---------- Atmosphere ----------
+     Stadium-night texture for large dark surfaces: diffused
+     floodlight halos (green + violet) + 35mm film grain.
+     Never on small UI elements — hero sections, section
+     backgrounds, full-bleed panels only. */
+  --atmo-fog: radial-gradient(ellipse 70% 60% at 5% -8%, rgba(47,190,106,0.30) 0%, transparent 58%),
+              radial-gradient(ellipse 65% 65% at 98% 108%, rgba(138,124,230,0.22) 0%, transparent 60%),
+              radial-gradient(ellipse 95% 75% at 50% 108%, rgba(0,0,0,0.6) 0%, transparent 74%); /* @kind color */
+  --atmo-grain-url: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); /* @kind other */
+}
+
+/* Apply to any dark section that needs stadium-night atmosphere instead of flat colour */
+.atmo {
+  position: relative;
+  background-color: var(--bg-2);
+  background-image: var(--atmo-fog);
+}
+.atmo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--atmo-grain-url);
+  opacity: 0.26;
+  mix-blend-mode: overlay;
+}
+
+/* ============================================================
+   Semantic type roles
+   Use these classes — they're the single source of truth.
+   ============================================================ */
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* DISPLAY — uppercase, wide, brutal. For hero, posters, drop names. */
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(64px, 12vw, var(--fs-6xl));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+}
+
+/* SHOUT — used on banners / pillars / section headers */
+.t-shout {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(40px, 6vw, var(--fs-4xl));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+}
+
+/* H1–H4 — page titles & section headers */
+.t-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+}
+.t-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+}
+.t-h3 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+}
+.t-h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+}
+
+/* HEADLINE — rounded poster face, for hero statements that need warmth over precision */
+.t-headline {
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-size: clamp(40px, 7vw, var(--fs-5xl));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+}
+.t-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+/* BODY */
+.t-body   { font-size: var(--fs-base); line-height: var(--lh-normal); }
+.t-body-lg{ font-size: var(--fs-md);  line-height: var(--lh-normal); }
+.t-body-sm{ font-size: var(--fs-sm);  line-height: var(--lh-normal); color: var(--fg-2); }
+.t-meta   { font-size: var(--fs-xs);  line-height: var(--lh-normal); color: var(--fg-3); letter-spacing: var(--tracking-normal); }
+
+/* MONO — numbers, score, kits, codes */
+.t-mono   { font-family: var(--font-mono); font-feature-settings: "tnum","ss01"; }
+.t-num    { font-family: var(--font-display); font-variant-numeric: tabular-nums; font-weight: 700; }
+
+/* Utility colour swaps */
+.fg-1 { color: var(--fg); }
+.fg-2 { color: var(--fg-2); }
+.fg-3 { color: var(--fg-3); }
+.fg-4 { color: var(--fg-4); }
+.fg-green { color: var(--brand-green); }
+.fg-blue  { color: var(--brand-blue); }
+
+/* ============================================================
+   Editorial capsule type — drops, overlays, exclusive product.
+   Sparingly: everyday UI stays on --font-display / --font-sans.
+   ============================================================ */
+
+/* Ultra-condensed capsule headline — squeezed via transform, not a real condensed cut */
+.t-capsule-condensed {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-condensed);
+  transform: scaleX(0.82);
+  transform-origin: left;
+  display: inline-block;
+  line-height: var(--lh-overlay);
+}
+
+/* Expanded capsule label — drop codes, small exclusive tags */
+.t-capsule-expanded {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-expanded);
+  font-size: var(--fs-xs);
+}
+
+/* Serif italic accent — capsule drop names, editorial callouts. Never body copy. */
+.t-capsule-serif {
+  font-family: var(--font-capsule);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: var(--lh-overlay);
+}
+
+/* Type stacked directly over image/art — tight negative-feeling leading, high contrast fg */
+.t-overlay {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: var(--lh-overlay);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg);
+  mix-blend-mode: normal;
+}
