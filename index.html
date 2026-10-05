@@ -58,6 +58,9 @@
       .fx-hx-col { padding: 28px 24px 32px !important; }
       .fx-hx-sec { padding: 12px !important; }
     }
+    .fx-sa { opacity: 0; transform: translate3d(var(--sx,0px), var(--sy,0px), 0) scale(0.94); transition: opacity .7s ease-out, transform .8s cubic-bezier(.2,.7,.2,1); }
+    .fx-sa.fx-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .fx-sa { opacity: 1; transform: none; transition: none; } }
     .fx-rv { opacity: 0; transform: translateY(20px); transition: opacity .4s ease, transform .4s ease; }
     .fx-rv.fx-in { opacity: 1; transform: none; }
     .fx-imgwrap image-slot { transition: transform .22s ease-in; }
@@ -204,7 +207,7 @@
   </section>
 
   <!-- 3. SEASONS MOSAIC -->
-  <section class="fx-pad" style="padding:0 64px 64px 64px;">
+  <section class="fx-pad" style="padding:0 64px 64px 64px;overflow-x:clip;">
     <div class="fx-seasons fx-scroll" style="display:grid;grid-template-columns:repeat(4, 1fr);grid-auto-rows:180px;gap:24px;">
       <sc-for list="{{ seasons }}" as="item" hint-placeholder-count="5">
         <div class="fx-season" style="position:relative;overflow:hidden;cursor:pointer;grid-column:{{ item.gridColumn }};grid-row:{{ item.gridRow }};background:var(--brand-grad);" onClick="{{ item.onClick }}">
@@ -692,6 +695,13 @@ class Component extends DCLogic {
   };
 
   setupReveal = () => {
+    const dirs = [[-180, 0], [-120, 160], [0, -160], [180, 0], [140, 180]];
+    document.querySelectorAll('.fx-season').forEach((el, i) => {
+      if (el.__sa || !this._io) return; el.__sa = 1;
+      const d = dirs[i % dirs.length];
+      el.style.setProperty('--sx', d[0] + 'px'); el.style.setProperty('--sy', d[1] + 'px');
+      el.style.transitionDelay = (i * 110) + 'ms'; el.classList.add('fx-sa'); this._io.observe(el);
+    });
     document.querySelectorAll('.fx-tw').forEach(el => { if (el.__tw || !window.IntersectionObserver) { if (!window.IntersectionObserver) el.classList.add('fx-in'); return; } el.__tw = 1; const o = new IntersectionObserver((es) => es.forEach(en => { if (en.isIntersecting) { el.classList.add('fx-in'); o.disconnect(); } }), { threshold: 0.6 }); o.observe(el); });
     const hp = document.querySelector('.fx-hx-panel');
     if (hp && !hp.__io && window.IntersectionObserver) { hp.__io = new IntersectionObserver((es) => es.forEach(e => hp.classList.toggle('fx-paused', !e.isIntersecting)), { threshold: 0 }); hp.__io.observe(hp); }
