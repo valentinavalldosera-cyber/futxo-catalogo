@@ -143,7 +143,7 @@
 
       <div class="fx-hero-img" style="position:relative;z-index:2;aspect-ratio:2/3;width:100%;align-self:start;">
         <div style="position:absolute;inset:0;border-radius:16px;overflow:hidden;background:#d9dbde;">
-          <image-slot id="hero-catalog-v2" shape="rect" fit="cover" src="img/hero-hoodie.png" placeholder="[ HERO — DROP 01 ]"></image-slot>
+          <image-slot id="hero-catalog-v2" shape="rect" fit="cover" src="hero-hoodie.png" placeholder="[ HERO — DROP 01 ]"></image-slot>
         </div>
         <div class="fx-hero-social" style="position:absolute;top:16px;right:16px;z-index:4;display:flex;gap:10px;">
           <a href="https://www.instagram.com/futxoofficial" target="_blank" rel="noopener" aria-label="Instagram @futxoofficial" style="width:48px;height:48px;border-radius:999px;border:1px solid #3a3a3a;background:rgba(27,27,27,0.72);display:flex;align-items:center;justify-content:center;color:var(--fg);">
@@ -794,7 +794,7 @@ class Component extends DCLogic {
       const minPrice = seasonProducts.length ? Math.min(...seasonProducts.map(p => p.price)) : 0;
       return {
         ...sl,
-        image: 'img/slot-season-' + sl.key.toLowerCase() + '-0.' + (sl.key === 'PRE-MATCH' ? 'png' : 'webp'),
+        image: 'slot-season-' + sl.key.toLowerCase() + '-0.' + (sl.key === 'PRE-MATCH' ? 'png' : 'webp'),
         sub: st.sub,
         meta: seasonProducts.length ? ('PIECES · FROM ' + fmtPrice(minPrice)) : '',
         slotId: 'season-' + sl.key.toLowerCase() + '-' + gen,
@@ -818,7 +818,7 @@ class Component extends DCLogic {
     const minAll = dropProducts.length ? Math.min(...dropProducts.map(p => p.price)) : 0;
     const heroStats = { collections: '5 ' + t.statCollections, pieces: '40 ' + t.statPieces, from: t.statFrom + ' ' + fmtPrice(minAll) };
     const heroIndex = seasons.map((s, i) => ({ num: String(i + 1).padStart(2, '0'), key: s.key, sub: s.sub, onClick: () => { this.captureFlip(); this.setState({ activeState: s.key, page: 0 }); setTimeout(() => { const el = document.getElementById('capsule01-section'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' }); }, 60); } }));
-    const essentialsHeroImage = 'img/essentials-hero.png';
+    const essentialsHeroImage = 'essentials-hero.png';
 
     const fabricSpecs = FABRIC_SPECS.map(s => ({ label: s.label, desc: language === 'ES' ? s.es : s.en }));
     const fitSpecs = FIT_SPECS.map(s => ({ label: s.label, desc: language === 'ES' ? s.es : s.en }));
