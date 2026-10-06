@@ -214,9 +214,9 @@
           <div style="position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;padding:16px;pointer-events:none;">
             <div style="font-family:var(--font-display);font-weight:800;font-size:26px;line-height:1.05;letter-spacing:var(--tracking-display);text-transform:uppercase;color:#ffffff;text-align:center;">{{ item.sub }}</div>
           </div>
-          <image-slot id="{{ item.slotId }}" shape="rect" fit="cover" src="{{ item.image }}" placeholder=" " style="position:relative;z-index:1;"></image-slot>
+          <img src="{{ item.image }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ item.pos }};z-index:1;">
           <div style="position:absolute;inset:0;z-index:2;background:linear-gradient(180deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.45) 100%);pointer-events:none;"></div>
-          <span onClick="{{ item.clearImage }}" title="Remove image" style="position:absolute;top:8px;right:8px;z-index:3;width:22px;height:22px;border-radius:999px;background:rgba(10,10,10,0.7);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;">✕</span>
+          
           <div style="position:absolute;left:16px;bottom:14px;pointer-events:none;z-index:3;">
             <div style="font-family:var(--font-mono);font-weight:700;font-size:16px;letter-spacing:0.03em;color:#ffffff;text-transform:uppercase;">{{ item.key }}</div>
             <div style="font-family:var(--font-sans);font-weight:600;font-size:12px;color:#ffffff;text-transform:uppercase;margin-top:2px;">{{ item.sub }}</div>
@@ -233,7 +233,7 @@
   <div style="position:relative;">
 
     <div id="capsule01-section" class="fx-pad" style="background:var(--bg-2);padding:80px 64px 40px 64px;">
-      <h2 class="fx-h2" style="font-family:var(--font-display);font-weight:800;font-size:48px;letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--fg);margin:0;">DROP 01</h2>
+      <h2 class="fx-h2" style="font-family:var(--font-display);font-weight:800;font-size:clamp(72px,11vw,160px);line-height:0.9;letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--fg);margin:0;">DROP 01</h2>
     </div>
 
     <div class="fx-pad" style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 64px;background:rgba(27,27,27,0.72);backdrop-filter:blur(14px) saturate(140%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
@@ -867,7 +867,7 @@ class Component extends DCLogic {
         ...sl,
         sub: st.sub,
         meta: seasonProducts.length ? ('PIECES · FROM ' + fmtPrice(minPrice)) : '',
-        slotId: 'season-' + sl.key.toLowerCase() + '-' + gen, image: 'season-' + sl.key.toLowerCase() + '.webp',
+        slotId: 'season-' + sl.key.toLowerCase() + '-' + gen, image: 'season-' + sl.key.toLowerCase() + '.webp', pos: ({ 'PRE-MATCH': 'center 12%', 'LEGACY': 'center 25%', 'MATCHDAY': 'center 20%' })[sl.key] || 'center top',
         onClick: () => { this.setState({ activeState: sl.key }); document.getElementById('capsule01-section').scrollIntoView({ behavior: 'smooth' }); },
         clearImage: (e) => { e && e.stopPropagation && e.stopPropagation(); seasonGen[sl.key] = gen + 1; this.forceUpdate(); },
       };
