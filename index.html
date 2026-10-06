@@ -214,7 +214,7 @@
           <div style="position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;padding:16px;pointer-events:none;">
             <div style="font-family:var(--font-display);font-weight:800;font-size:26px;line-height:1.05;letter-spacing:var(--tracking-display);text-transform:uppercase;color:#ffffff;text-align:center;">{{ item.sub }}</div>
           </div>
-          <image-slot id="{{ item.slotId }}" shape="rect" fit="cover" placeholder=" " style="position:relative;z-index:1;"></image-slot>
+          <image-slot id="{{ item.slotId }}" shape="rect" fit="cover" src="{{ item.image }}" placeholder=" " style="position:relative;z-index:1;"></image-slot>
           <div style="position:absolute;inset:0;z-index:2;background:linear-gradient(180deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.45) 100%);pointer-events:none;"></div>
           <span onClick="{{ item.clearImage }}" title="Remove image" style="position:absolute;top:8px;right:8px;z-index:3;width:22px;height:22px;border-radius:999px;background:rgba(10,10,10,0.7);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;">✕</span>
           <div style="position:absolute;left:16px;bottom:14px;pointer-events:none;z-index:3;">
@@ -867,7 +867,7 @@ class Component extends DCLogic {
         ...sl,
         sub: st.sub,
         meta: seasonProducts.length ? ('PIECES · FROM ' + fmtPrice(minPrice)) : '',
-        slotId: 'season-' + sl.key.toLowerCase() + '-' + gen,
+        slotId: 'season-' + sl.key.toLowerCase() + '-' + gen, image: 'season-' + sl.key.toLowerCase() + '.webp',
         onClick: () => { this.setState({ activeState: sl.key }); document.getElementById('capsule01-section').scrollIntoView({ behavior: 'smooth' }); },
         clearImage: (e) => { e && e.stopPropagation && e.stopPropagation(); seasonGen[sl.key] = gen + 1; this.forceUpdate(); },
       };
@@ -892,7 +892,7 @@ class Component extends DCLogic {
     const curState = STATES.find(s => s.key === activeState);
     this._cursorDrop = curState ? curState.sub.toUpperCase() : t.allSeasons;
     const heroIndex = seasons.map((s, i) => ({ num: String(i + 1).padStart(2, '0'), key: s.key, sub: s.sub, onClick: () => { this.captureFlip(); this.setState({ activeState: s.key, page: 0 }); setTimeout(() => { const el = document.getElementById('capsule01-section'); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' }); }, 60); } }));
-    const essentialsHeroImage = 'img/essentials-hero.png';
+    const essentialsHeroImage = 'essentials-hero.png';
 
     const fabricSpecs = FABRIC_SPECS.map(s => ({ label: s.label, desc: language === 'ES' ? s.es : s.en }));
     const fitSpecs = FIT_SPECS.map(s => ({ label: s.label, desc: language === 'ES' ? s.es : s.en }));
